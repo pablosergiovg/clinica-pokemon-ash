@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PropTypes from 'prop-types';
 import { ContextoFormulario } from "../../context/ContextoFormulario";
 
 const Input = ({ name, label, type = "text" }) => {
@@ -30,5 +31,11 @@ const Input = ({ name, label, type = "text" }) => {
     </div>
   );
 };
+
+
+Input.propTypes = {
+  campo: PropTypes.string
+};
+
 
 export default Input;

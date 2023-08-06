@@ -2,6 +2,9 @@ import React, {useReducer} from "react";
 
 export const ContextoFormulario = React.createContext();
 
+/**
+ * Este es el valor inicial de la aplicación, es un objeto.
+ */
 const initialStatePokemon = {
   entrenador:{
     nombre: "",
@@ -11,6 +14,9 @@ const initialStatePokemon = {
   nombrePokemon: "",
 }
 
+/**
+ * Esta función es la que maneja el estado.
+ */
 const reducerPokemon = (state, action) => {
   switch (action.type) {
     case "AGREGAR_ENTRENADOR":
@@ -28,8 +34,7 @@ const ProviderFormulario = ({ children }) => {
 
   const handleInputBlur = (valorInput) => {
     const { campo, valor } = valorInput;
-//    console.log(campo);
-//    console.log(valor);
+    
     console.log(pokemonState);
 
     if(campo === "nombrePokemon"){
